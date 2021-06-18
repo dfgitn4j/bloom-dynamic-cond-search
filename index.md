@@ -3,7 +3,7 @@
 
 Enabling BI tool like functionality in Neo4j Bloom —  “I want to easily search based on this and / or that logic” 
 
-![](https://cdn-images-1.medium.com/max/2000/1*uaBIYm15pH_5RYbmC5pG0A.png)
+![](images/forrestGumpBloom.png)
 
 Neo4j Bloom is a wonderful tool for navigating and visualizing a Neo4j graph without having to know the Cypher query language. This functionality is unique and a necessity for graph database end-users. Why? The variety and depth of connections between a graph’s nodes and relationships often cannot be determined ahead of time, and learning how to write a Cypher query, similar to learning SQL, can be limiting for some. Besides, it’s fun to be able to visually traverse the graph, similar to taking an unknown path through a forest. You never know what you might find. Take a quick look at the “Bloom Features: Near Natural Language Search” video if you’re not familiar with the Bloom search and graph navigation capabilities.
 
@@ -29,7 +29,7 @@ Bloom search phrases can be used to address the need for conditional and declara
 
 The most basic example of using apoc.cypher.run() in Bloom would be to create a search phrase to take a Cypher query string and execute it. Creating the search phrase would look like this: 
 
-![](https://cdn-images-1.medium.com/max/2270/1*PzW7MqsP4WBLiTF9YWhpPg.png)
+![](images/1_0_SrchPhraseCypherAsParam.png)
 
 Users activate this search phrase by (assuming you’ve imported the blog’s Bloom perspective):
 
@@ -39,7 +39,7 @@ Users activate this search phrase by (assuming you’ve imported the blog’s Bl
 
 1. Then press enter to execute the query which will show something similar to:
 
-![](https://cdn-images-1.medium.com/max/2000/1*X5tA1XLVysrMd68y8Dyybg.png)
+![](images/1_1_SceneCypherAsParam.png)
 
 The Cypher query text entered in the search box as part of the search phrase is passed to the main query in the parameter $cypherText, which is then executed by apoc.cypher.run(). I’ve used this search phrase when I need a visualization that is too much for the Neo4j Browser to render. See the “Where’s My Neo4j Cypher Query Results” post for more details on when this might occur. 
 [**Where’s My Neo4j Cypher Query Results? 😠 ⚡️ ⁉️**
@@ -154,7 +154,7 @@ The query that drives this search phrase does not return a single label option b
     WITH reduce(x = '', lab in labelCombos | x + ':' + lab + ' AND ' ) AS whereClause
     RETURN left(whereClause, size(whereClause) - 4) as whereClause
 
-**👉** ***One last thing. *** ***Show the graph database schema ***👈
+**👉** ***One last thing. *** ***Show the graph database schema **👈**
 
 It’s always useful to see what types of labels, relationships and properties are in a graph which can easily be done with db.visualize.schema():
 
@@ -209,3 +209,5 @@ A few tips about working with Bloom and the constructs presented in this blog:
 1. There is no error checking. A runtime error will be shown if an incorrect Cypher statement is built.
 
 Thank you for your time, and please add suggestions and code to the [github repo](https://github.com/dfgitn4j/bloom-dynamic-cond-search) for this blog if you have other useful search phrase patterns. I will be adding some in the future that are bouncing around in my “when I have spare time and have functional consciousness” spot in my b̶r̶i̶a̶n brain.
+
+
