@@ -17,11 +17,11 @@ The files beginning with "srchPhrs_" contain the text needed to create a Bloom s
 
 | File Name                          | Description                                                                     | 
 | ---------------------------------- | ------------------------------------------------------------------------------- |
-| srchPhrs_1_runCypherText.cypher    | Search Phrase to run cypher query input                                         |
+| srchPhrs_1_runCypherText.cypher    | Search Phrase to run cypher query as text input                                 |
 | srchPhrs_2_labelNumericProp.cypher | Search Phrase to pick a label and create conditional on a numeric property      |
-| srchPhrs_3_labelMultiProp.cypher   | Search Phrase to pick a label with AND / OR conditionals on multiple properites |
-| srchPhrs_4_multiLabelCombo.cypher  | Search Phrase to retrieve nodes with valid multiple label combinations          |
-| srchPhrs_5_showSchema.cypher       | Search Phrase to show graph schema (pick one)                                   |
+| srchPhrs_3_labelMultiProp.cypher   | Search Phrase to pick a label with AND / OR conditionals on multiple properties |
+| srchPhrs_4_multiLabelCombo.cypher  | Search Phrase to retrieve nodes with multiple and valid label combinations      |
+| srchPhrs_5_showSchema.cypher       | Search Phrase to show graph schema (pick one technique in file)                 |
 
 
    *** 
@@ -31,7 +31,8 @@ The files beginning with "srchPhrs_" contain the text needed to create a Bloom s
 
 ### Enhancing the movies database
 
-run the Cypher in "_0_2_enhanceMovie.cypher_" if you want to run the multi-label search phrase, then after you've created the movies database (you do).
+1. Have a movies database created by either running `:play movies` gist in the Neo4j Browser, or run "_0_1_creatMovieDB.cypher_" 
+1. Run the Cypher in "_0_2_enhanceMovie.cypher_" if you want to run the multi-label search phrase, after you've created the movies database (you do).
 
 ### Import Bloom perspective that includes the above search phrases into Bloom
 
