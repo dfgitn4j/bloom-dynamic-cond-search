@@ -8,7 +8,7 @@
 :param label => 'Person';
 :param property => 'born';
 :param condition => '>=';
-:param val1 => 1960;
+:param value => 1960;
 
 
 // Cypher query
