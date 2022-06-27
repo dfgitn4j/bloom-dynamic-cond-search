@@ -22,7 +22,7 @@ RETURN nodes
 
 // Parameter: $label; Data type: String; values: Cypher Query
 CALL db.labels() YIELD label
-WHERE label <> '_Bloom_Perspective_'
+WHERE NOT label IN [ '_Bloom_Perspective_', '_Bloom_Scene_' ]
 RETURN label
 // ORDER BY label DESC
 
