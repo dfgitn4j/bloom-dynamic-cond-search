@@ -23,9 +23,10 @@ RETURN collect(node) AS nodes, relationships
 // more control over what comes back, e.g.
 // ["_Bloom_Perspective_"] could be a list of things not to include ["_Bloom_Perspective_", "BAD_RELATIONSHIP"]
 CALL db.schema.visualization() YIELD nodes, relationships
-RETURN
-[n IN nodes WHERE any(lbl IN apoc.node.labels(n)
-  WHERE NOT lbl IN ["_Bloom_Perspective_"])] AS nodes, relationships
+UNWIND nodes as node
+with node, relationships
+WHERE any(lbl IN apoc.node.labels(node) WHERE NOT lbl IN ['_Bloom_Perspective_', '_Bloom_Scene_'])
+RETURN collect(node) AS nodes, relationships
 
 // Same concept as above, except return only ["Movie", "Famous", "Person"], and 
 // any relationship *except* ["REVIEWED"]
